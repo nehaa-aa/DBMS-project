@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% set hide_nav = True %}
+{% block title %}Dashboard — Smart Nutrition{% endblock %}
+{% block content %}
+<h3>Hello, {{ user }}</h3>
+<div class="card">
+  <p class="muted">Quick actions</p>
+  <ul class="dash-actions">
+    <li><a class="btn-secondary" href="/biometrics">Update Biometrics</a></li>
+    <li><a class="btn-secondary" href="/meal">Log a Meal</a></li>
+  </ul>
+</div>
+<p style="margin-top:12px;"><a href="/reports">View BMI & Meals</a> • <a href="/logout">Logout</a></p>
+{% endblock %}

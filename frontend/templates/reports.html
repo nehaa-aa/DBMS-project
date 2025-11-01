@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Reports — Smart Nutrition{% endblock %}
+{% block content %}
+<h3>My reports</h3>
+{% if bio %}
+  <div class="card">
+    <p>Height: {{ bio.height_cm }} cm • Weight: {{ bio.weight_kg }} kg • Goal: {{ bio.goal }}</p>
+    <p class="badge bmi"><span class="icon"></span> BMI: {{ bio.bmi or '—' }}</p>
+  </div>
+{% else %}
+  <div class="card"><p>No biometrics yet. Update them to see BMI and trends here.</p></div>
+{% endif %}
+
+<h4>Recent meals</h4>
+<ul class="meal-list">
+  {% for m in meals %}
+  <li class="meal-item">
+    <span>{{ m.eaten_at }} — {{ m.name }} — {{ m.quantity_g }} g — {{ m.calories }} kcal</span>
+    <form method="post" action="/meal/delete/{{ m.id }}" class="inline-form" onsubmit="return confirm('Delete this entry?');">
+      <button type="submit" class="btn-outline btn-sm">Delete</button>
+    </form>
+  </li>
+  {% else %}
+    <li class="meal-item"><span>No meals yet. Log your first meal to get started.</span></li>
+  {% endfor %}
+</ul>
+<p class="footer" style="margin-top:12px;"><a href="/dashboard">Back to dashboard</a></p>
+{% endblock %}

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Smart Nutrition & BMI{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body style="background: url('{{ url_for('static', filename='images/still-life-fruits-vegetables.jpg') }}') no-repeat center center fixed; background-size: cover;">
+
+  {% if not hide_nav %}
+  <header class="nav">
+    <a class="brand" href="/">Smart Nutrition</a>
+    <nav class="nav-links">
+      <a href="/biometrics">Biometrics</a>
+      <a href="/meal">Log Meal</a>
+      <a href="/reports">Reports</a>
+      <a class="btn-secondary" href="/dashboard">Dashboard</a>
+      <a class="btn-outline" href="/logout">Logout</a>
+    </nav>
+  </header>
+  {% endif %}
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>
+

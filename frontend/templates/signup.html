@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% set hide_nav = True %}
+{% block title %}Sign Up — Smart Nutrition{% endblock %}
+{% block content %}
+<div class="auth-wrap">
+  <div class="card form auth-card">
+    <h3>Create your account</h3>
+    <p class="muted">Update BMI and log the first meal in under a minute.</p>
+    <form method="post">
+      <input name="name" placeholder="Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <div class="grid-2">
+        <input type="number" name="age" placeholder="Age">
+        <select name="gender">
+          <option>Male</option><option>Female</option><option>Other</option>
+        </select>
+      </div>
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="submit" class="btn-primary">Create account</button>
+    </form>
+    <p class="muted">Already have an account? <a href="/login">Log in</a></p>
+  </div>
+</div>
+{% endblock %}

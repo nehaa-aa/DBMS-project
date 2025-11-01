@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Log a Meal — Smart Nutrition{% endblock %}
+{% block content %}
+<h3>Log a meal</h3>
+<p class="muted">Choose a food and quantity; calories are computed automatically.</p>
+<form method="post" class="card form">
+  <select name="food_id" required>
+    {% for f in foods %}<option value="{{ f.id }}">{{ f.name }}</option>{% endfor %}
+  </select>
+  <div class="grid-2">
+    <input type="number" step="1" name="quantity_g" placeholder="Quantity (g)" required>
+    <input type="datetime-local" name="eaten_at">
+  </div>
+  <button type="submit" class="btn-primary">Add meal</button>
+</form>
+{% endblock %}

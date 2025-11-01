@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% set hide_nav = True %}
+{% block title %}Smart Nutrition & BMI{% endblock %}
+{% block content %}
+<section class="hero hero-bg">
+  <div class="hero-inner card hero-overlay">
+    <h1 class="display">Helping you optimize your health through the power of smart habits</h1>
+    <p class="lead">Track BMI, log meals, and turn daily choices into long‑term progress with a calm, focused dashboard built for consistency.</p>
+    <div class="cta-row">
+      <a class="btn-primary" href="/signup">Get Started</a>
+      <a class="btn-outline" href="/login">I already have an account</a>
+    </div>
+  </div>
+</section>
+
+<section class="split">
+  <div class="split-left card">
+    <h3>Why Smart Nutrition?</h3>
+    <p>Personalized logging keeps the friction low: update biometrics in seconds and see BMI computed instantly.</p>
+    <ul>
+      <li>Auto‑computed BMI from height and weight.</li>
+      <li>Meal logging with automatic calorie math.</li>
+      <li>Crisp reports with the last five meals.</li>
+    </ul>
+    <a class="btn-secondary" href="/dashboard">Explore the dashboard</a>
+  </div>
+  <div class="split-right card">
+    <h3>Built for steady progress</h3>
+    <p>Soft pastels, high contrast text, and friendly spacing bring calm focus to health data.</p>
+    <p class="badge good"><span class="icon"></span> Tip: Start by logging just breakfast for a week to build the habit.</p>
+  </div>
+</section>
+
+<section class="credentials card">
+  <h3>Your companion for mindful eating</h3>
+  <p>Simple tools that help students and professionals stay accountable—without complexity.</p>
+  <div class="grid-2">
+    <div>
+      <h4>What you get</h4>
+      <ul>
+        <li>Fast signup and secure login.</li>
+        <li>One‑tap biometrics update.</li>
+        <li>Meal entries with auto calories.</li>
+        <li>Concise history in reports.</li>
+      </ul>
+    </div>
+    <div>
+      <h4>What’s next</h4>
+      <ul>
+        <li>Weekly trend charts.</li>
+        <li>Goal‑based meal recommendations.</li>
+        <li>Export and share summaries.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="cta-row">
+    <a class="btn-primary" href="/signup">Create your account</a>
+    <a class="btn-outline" href="/login">Log in</a>
+  </div>
+</section>
+{% endblock %}

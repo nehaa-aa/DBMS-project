@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Biometrics — Smart Nutrition{% endblock %}
+{% block content %}
+<h3>Update Biometrics</h3>
+<form method="post" class="card form">
+  <div class="grid-2">
+    <input type="number" step="0.1" name="height_cm" placeholder="Height (cm)" required>
+    <input type="number" step="0.1" name="weight_kg" placeholder="Weight (kg)" required>
+  </div>
+  <select name="goal">
+    <option value="maintain">Maintain</option>
+    <option value="loss">Lose</option>
+    <option value="gain">Gain</option>
+  </select>
+  <button type="submit" class="btn-primary">Save</button>
+</form>
+{% endblock %}
